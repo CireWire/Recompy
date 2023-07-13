@@ -17,6 +17,12 @@ You can install Recompy using pip:
 ```bash
 pip install recompy
 ```
+or 
+
+```bash
+pip install https://github.com/CireWire/Recompy/
+```
+
 
 ## Usage
 
