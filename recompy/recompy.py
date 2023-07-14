@@ -56,21 +56,22 @@ class Recommender:
         model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
         self.model = model
 
-    def train_model(self, train_data, epochs=10, batch_size=32):
+    def train_model(self, train_data, target_column, epochs=10, batch_size=32):
         """
         Trains the model on the training data.
 
         Args:
             train_data (pandas.DataFrame): Training data.
+            target_column (str): Name of the target column in the training data.
             epochs (int): Number of training epochs.
-            batch_size (int): Batch size for training.
+        batch_size (int): Batch size for training.
 
         Returns:
             None
         """
-        # Separate the features and the target column
-        x_train = train_data.drop(columns=['target_column'])  # Replace 'target_column' with the actual name of the target column in your data
-        y_train = train_data['target_column']  # Replace 'target_column' with the actual name of the target column in your data
+    # Separate the features and the target column
+        x_train = train_data.drop(columns=[target_column])
+        y_train = train_data[target_column]
         self.model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
 
     def evaluate_model(self, val_data):
@@ -141,4 +142,3 @@ if __name__ == '__main__':
 
     # Save the model
     recommender.save_model('model.h5')
-  
