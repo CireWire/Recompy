@@ -56,6 +56,31 @@ recommender.save_model('model.h5')
 
 For more details and advanced usage, please refer to the wiki.
 
+## Docker
+
+Recompy can also be run inside a Docker container. Docker provides an easy and consistent way to package and distribute your library as a containerized application.
+
+To run Recompy using Docker, follow these steps:
+
+1. Install Docker: Make sure you have Docker installed on your system. You can download and install Docker from the official Docker website ([https://www.docker.com](https://www.docker.com)).
+
+2. Build the Docker image: Open a terminal, navigate to the project's root directory (where the Dockerfile is located), and run the following command to build the Docker image:
+
+   ```bash
+   docker build -t recompy .
+    ```
+
+This command will build the Docker image based on the instructions in the Dockerfile and tag it as recompy.
+
+Run the Docker container: Once the image is built, you can run the Docker container using the following command:
+
+  ```bash
+  docker run recompy
+  ```
+This will start the container and execute the main Python script inside the container.
+
+By running Recompy in a Docker container, you ensure that the library and its dependencies are isolated and can be easily deployed across different environments without worrying about compatibility issues.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
